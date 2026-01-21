@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Tourist Dashboard{% endblock %}
+
+{% block content %}
+<div class="tourist-container">
+  <div class="left-panel panel">
+    <form action="#" method="POST" id="form">
+      <h4>User Login</h4>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com">
+      </div>
+      <button type="submit" id="login" class="btn-full btn-login">Login</button>
+    </form>
+
+    <form action="#" method="POST" id="location">
+      <h4>Your Location</h4>
+      <div class="form-group">
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" placeholder="e.g., 18.1067">
+      </div>
+      <div class="form-group">
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" placeholder="e.g., 83.3956">
+      </div>
+      <button type="submit" id="get_location" class="btn-full btn-send">Send Location</button>
+    </form>
+    
+    <button id="em_button" class="btn-full btn-emergency">Emergency SOS</button>
+  </div>
+
+  <div class="right-panel panel">
+    <div id="map"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}

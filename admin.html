@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="admin-container">
+  <h2 class="dashboard-heading">Emergency Response Dashboard</h2>
+
+  <div class="grid-container">
+    <div class="alerts-card" id="active-alerts-card">
+        <p>Active Alerts</p>
+        <h2>0</h2>
+    </div>
+    <div class="alerts-card" id="acknowledged-alerts-card">
+        <p>Acknowledged</p>
+        <h2>0</h2>
+    </div>
+    <div class="alerts-card" id="resolved-alerts-card">
+        <p>Resolved</p>
+        <h2>0</h2>
+    </div>
+    <div class="alerts-card" id="total-alerts-card">
+        <p>Total Alerts</p>
+        <h2>0</h2>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <p style="font-weight: bold; color: var(--dark-color); font-size: 1.5rem; margin-bottom: 15px;">Recent Alerts:</p>
+    <table class="table" id="alert-table">
+        <thead>
+            <tr>
+                <th>Alert ID</th>
+                <th>Tourist Name</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="map-container">
+      <div id="admin-map"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}

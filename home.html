@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="home-container">
+   <h1 class="heading">Smart Tourist Safety App</h1> 
+   <p class="tag">Your Safety, Our Priority</p>
+   <div class="buttons">
+      <a href="{{ url_for('tourist') }}" class="btn-primary">Get Started as Tourist</a>
+      <a href="{{ url_for('admin') }}" class="btn-secondary">View Dashboards</a>
+   </div>
+</div>
+{% endblock %}
